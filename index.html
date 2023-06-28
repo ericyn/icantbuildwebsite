@@ -2,11 +2,37 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto Mono"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width" />
 
     <title>Eric Noel</title>
-    <meta name="description" content="Software engineer based in Seychelles." />
+    <meta
+      name="description"
+      content="Software engineer based in Victoria, Seychelles."
+    />
     <link rel="icon" type="image/png" href="favicon.png" />
+
+    <script type="text/javascript">
+      function updateLocalTime() {
+        var now = new Date();
+        var hh = now.getHours();
+        var mm = now.getMinutes();
+        var ss = now.getSeconds();
+
+        mm = (mm < 10 ? "0" : "") + mm;
+        ss = (ss < 10 ? "0" : "") + ss;
+
+        var td = hh < 12 ? "AM" : "PM";
+        hh = hh > 12 ? hh - 12 : hh;
+        hh = hh == 0 ? 12 : hh;
+
+        var clock = hh + ":" + mm + ":" + ss + " " + td;
+        document.getElementById("clock").innerHTML = clock;
+      }
+    </script>
 
     <style>
       ::selection {
@@ -24,6 +50,7 @@
       }
 
       body {
+        font-family: "Roboto Mono", monospace;
         font-feature-settings: "ss03" on;
         font-variation-settings: "wght" 100;
         text-size-adjust: none;
@@ -41,8 +68,8 @@
         }
       }
       .container * {
-        font-size: 0.875rem;
-        font-weight: 400;
+        font-size: 0.89rem;
+        font-weight: 500;
         line-height: 1.05625rem;
       }
 
@@ -53,9 +80,6 @@
       h5,
       h6 {
         padding-top: 1.0625rem;
-      }
-      h2 {
-        padding-bottom: 1.125rem;
       }
 
       ul {
@@ -123,11 +147,31 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="updateLocalTime(); setInterval('updateLocalTime()', 1000 )">
     <div class="container">
-      <h1>Eric Noel</h1>
+      <h1 style="padding-bottom: 0.5rem">Eric Noel</h1>
       <p>Updated <time datetime="2023-06-28">June 28, 2023</time></p>
-      <h2 id="aboutme">About</h2>
+      <div>
+        <div style="float: left">
+          <span id="clock">&nbsp;</span>
+        </div>
+        <div style="float: left; margin-left: 6px">
+          <p style="color: black">&#x2022;</p>
+        </div>
+        <div style="float: left; margin-left: 6px">
+          <p>Based in Victoria, Seychelles</p>
+        </div>
+      </div>
+      <h2 style="padding-top: 3rem; padding-bottom: 0.5rem">About</h2>
+      <p>
+        Creating & designing beautiful software since 2018, been on the internet
+        since circa 2012. Delightful interfaces are essential to me.
+      </p>
+      <p style="padding-top: 1rem">
+        Currently working @<a href="https://www.space95.sc" target="_blank"
+          >Space95</a
+        >.
+      </p>
     </div>
   </body>
 </html>
