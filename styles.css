@@ -45,7 +45,7 @@ body {
 }
 
 .projects-container {
-  padding: 0rem 1rem;
+  padding: 5rem 1rem;
   max-width: 55.75rem;
   width: 100%;
   margin: 0 auto;
@@ -75,6 +75,14 @@ body {
   .wrapper-projects .single-project {
     width: 50%;
   }
+}
+.black {
+  filter: grayscale(100%) brightness(0%);
+  color: black;
+}
+.greyed {
+  opacity: 0.2;
+  filter: grayscale(1);
 }
 
 .logo {
@@ -161,6 +169,9 @@ ul li ul li:before {
   width: 6px;
   border-radius: 50%;
   box-shadow: inset 0 0 0 1px currentColor;
+}
+img {
+  max-width: 100%;
 }
 
 .a-link {
